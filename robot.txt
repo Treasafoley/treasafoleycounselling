@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://www.treasafoleycounselling.co.uk/sitemap.xml

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+ 
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="theme-color" content="#ffffff">
+
+  <link rel="shortcut icon" href="https://treasafoleycounselling.co.uk/favicon.png">
+
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Treasa Foley – Integrative Counsellor in Exeter</title>
+  <meta name="description" content="Integrative counselling for clients with anxiety, identity and relationship related issues">
+  <meta name="keywords" content="about therapist Exeter, queer counsellor Exeter, LGBTQ+ therapy, low cost, trans friendly therapist, kink aware counsellor, sex positive therapy, anxiety, identity issues, relationships">
+  <link rel="stylesheet" href="style.css">
+
+  
+  
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .about-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .about-section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+    }
+
+   .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .grid img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      justify-self: center;
+    }
+
+    .text h3 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #2c3e50;
+    }
+
+    .text p, .text li {
+      margin: 15px 0 0 0;
+      text-align: left;
+    }
+
+    .qualifications {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    /* Explicit grid direction */
+    .grid.row1 {
+      grid-template-areas: "text image";
+    }
+    .grid.row1 .text { grid-area: text; }
+    .grid.row1 img { grid-area: image; }
+
+    .grid.row2 {
+      grid-template-areas: "image text";
+    }
+    .grid.row2 img { grid-area: image; }
+    .grid.row2 .text { grid-area: text; }
+
+    /* Responsive: stack content vertically */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "text"
+          "image";
+        text-align: center;
+      }
+
+      .grid img {
+        margin-bottom: 20px;
+      }
+
+      .grid.row2 {
+        grid-template-areas:
+          "image"
+          "text";
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+ <header>
+  <nav class="menu">
+    <div class="logo">
+      <img src="logo.png" alt="Treasa Foley Counselling logo">
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <ul class="menu-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">How I work</a></li>
+      <li><a href="contact.html">Location/Fees</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <section class="about-section">
+    <h2>About Me</h2>
+
+    <!-- Row 1: Experience -->
+    <div class="grid row1">
+      <div class="text">
+        <h3>Experience</h3>
+        <p><strong>Anxiety:</strong> I work with clients experiencing a range of anxiety-related challenges, including low self-esteem, stress and social anxiety.
+        These challenges often lead to deeper existential concerns such as fear of mortality, feelings of meaninglessness, disconnection from self or others or a sense of not belonging.
+        My approach helps clients feel grounded and connected and generally more confident in facing life’s inevitable uncertainties.</p>
+
+        <p><strong>Identity:</strong> I support clients exploring questions around identity, belonging, and purpose, including experiences connected to culture, sexuality, gender, neurodiversity, chronic illness, or just generally feeling different from those around them.
+Together, we can explore what feels authentic to you, your relationships with others and your connection to community, culture, and the life you want to build.</p>
+
+        <p><strong>Relationships:</strong> I work with clients to navigate challenges in family, romantic, friendship and workplace relationships. This includes managing attachment, intimacy, communication difficulties, loneliness and conflicts with boundaries.
+        I also support clients in addressing deeper existential aspects of relationships, such as isolation and longing for deeper connection.</p>
+      </div>
+      <img src="dandelion.png" alt="Counselling session">
+    </div>
+
+    <!-- Row 2: Qualifications -->
+    <div class="grid row2">
+      <img src="flower.png" alt="Community event">
+      <div class="text">
+        <h3>Qualifications</h3>
+        <ul class="qualifications">
+          <li><strong>Higher Diploma in Integrative Counselling, including an Introduction To Counselling Children And Young Adults </strong> – Iron Mill College</li>
+          <li><strong>Certificate in Counselling Studies</strong> – North Warwickshire and South Leicestershire College</li>
+          <li><strong>Certificate in Counselling Skills</strong> – King Edward VI College</li>
+          <li><strong>Additional CPD Courses:</strong> An Introduction to Positive Psychology</li>
+        </ul>
+       <p><strong>Young People:</strong>I also provide counselling to young people aged 16 and 17 on issues such as lonliness, bullying, low self esteem and relationship issues. I have a certificate in safeguarding children and young adults and hold an enhanced DBS certificate. </p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Treasa Foley Counselling</p>
+  </footer>
+  
+<script src="jsmenu.js"></script>
+
+  
+</body>
+</html>

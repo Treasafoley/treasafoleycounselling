@@ -1,0 +1,9 @@
+
+
+const mobileMenu = document.getElementById('mobile-menu');
+const menuLinks = document.querySelector('.menu-links');
+
+mobileMenu.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+  menuLinks.classList.toggle('active');
+});
