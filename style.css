@@ -1,0 +1,717 @@
+/* Reset & base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #E6E6FA;
+}
+
+/* ------------------ */
+/* MOBILE RESPONSIVENESS - MENU */
+/* ------------------ */
+
+/* Base menu styles (desktop) */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.menu .logo img {
+  height: 85px;
+  width: auto;
+  display: block;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #2c3e50;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.menu-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #3498db;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.menu-links a:hover::after {
+  width: 100%;
+}
+
+.menu-links a:hover {
+  color: #3498db;
+}
+
+/* Hamburger (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #2c3e50;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ------------------ */
+/* MOBILE MENU (screens <= 768px) */
+/* ------------------ */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: row; /* keep logo and hamburger on one line */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: flex; /* show hamburger */
+  }
+
+  .menu-links {
+    display: none; /* hide menu by default */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+  }
+
+  .menu-links.active {
+    display: flex; /* show menu when hamburger clicked */
+  }
+
+  .menu-links li {
+    width: 100%;
+  }
+
+  .menu-links a {
+    display: block;
+    padding: 1rem;
+  }
+
+  .menu-links a:hover {
+    background-color: #f0f4f5;
+  }
+
+  /* Animate hamburger to X */
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+/* Hero Section */
+.hero {
+  background: url('bokeh.png') no-repeat center center/cover;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 4rem;
+
+  /* Rounded corners + align with logo width */
+  border-radius: 20px;
+  max-width: 1200px; /* match or slightly smaller than your logo/menu width */
+  margin: 2rem auto; /* centers the hero box */
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #fff;
+    color: #3498db;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background: #2980b9;
+    color: #fff;
+}
+
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* makes it stack on smaller screens */
+}
+
+.about-photo {
+  width: 370px;   /* adjust size */
+  height: auto;
+  border-radius: 12px; /* rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1; /* takes up remaining space */
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+
+
+
+/* Fees Tab (Collapsible) */
+.fees-tab {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+.fees-tab summary {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  outline: none;
+}
+
+.fees-tab[open] {
+  background: #f0f8ff; /* subtle blue when open */
+  border-color: #3498db;
+}
+
+.fees-tab p {
+  margin-top: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Additional styling for qualifications */
+.qualifications {
+  list-style-type: disc;
+  padding-left: 20px; /* aligns bullets nicely */
+  margin-top: 10px;
+}
+
+.qualifications li {
+  margin-bottom: 8px; /* spacing between items */
+  line-height: 1.5; /* improves readability */
+}
+
+.text h4 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+
+
+
+
+/* Sections */
+.section {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.section p, .section ul {
+    margin-bottom: 1.5rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.card {
+  position: relative;
+  flex: 1 1 300px; /* minimum 300px, grow equally */
+  max-width: 300px; /* keep all cards the same width */
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none; /* removes underline for links */
+  overflow: hidden;
+  z-index: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  /* Overlay background */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('bokeh.png') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 12px;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+/* Responsive: stack cards on smaller screens */
+@media (max-width: 960px) {
+  .cards {
+    justify-content: center;
+  }
+  
+  .card {
+    flex: 1 1 80%; /* almost full width */
+    max-width: none;
+  }
+}
+
+
+
+/* Contact Form */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact input, .contact textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact button {
+    padding: 0.8rem;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.contact button:hover {
+    background: #2980b9;
+}
+
+
+/* Layout for map + room side-by-side */
+.map-room-container {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;    /* keep items same height */
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: nowrap;       /* prevent wrapping on desktop */
+}
+
+/* Give the map slightly more room than the photo */
+.map-container {
+  flex: 1 1 60%;           /* grow, shrink, initial 60% width */
+  max-width: 70%;          /* prevents it getting too wide */
+  min-height: 420px;       /* keep a consistent height */
+  border-radius: 10px;
+  overflow: hidden;        /* keeps the iframe rounded */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Make iframe fill its container */
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 0;
+  display: block;
+}
+
+/* Photo column */
+.room-image {
+  flex: 0 0 36%;           /* fixed-ish width for photo column */
+  max-width: 36%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* crop to fit without distortion */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: block;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 900px) {
+  .map-room-container {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+  }
+  .map-container,
+  .room-image {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: 260px;
+  }
+  .map-container iframe {
+    min-height: 260px;
+  }
+  .room-image img {
+    min-height: 260px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+
+
+/* Footer */
+
+/* Desktop */
+.footer-logo {
+  height: 150px;   /* fixed desktop height */
+  width: auto;
+  display: block;
+  margin: 0 auto;  /* center horizontally */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-logo {
+    max-width: 90%;  /* shrink to fit viewport */
+    height: auto;    /* maintain aspect ratio */
+  }
+}
+
+
+
+footer {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* spacing between text and logo */
+}
+
+
+
+
+
+
+/* === About page: force reliable responsive behaviour ===
+   Paste this at the end of style.css (after all other rules)
+   */
+
+/* Only apply grid layout to About section */
+.about-section .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+
+/* make sure text can shrink (fixes very narrow text column issue) */
+.about-section .text,
+.grid .text {
+  min-width: 0;          /* allows the text block to shrink correctly inside the grid */
+  width: 100%;
+}
+
+/* ensure images behave predictably */
+.about-section .grid img,
+.grid img {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+  justify-self: center;
+}
+
+/* Explicit grid areas (desktop)
+   Row1: text left, image right
+   Row2: image left, text right
+*/
+.about-section .grid.row1 { grid-template-areas: "text image"; }
+.about-section .grid.row1 .text { grid-area: text; }
+.about-section .grid.row1 img { grid-area: image; }
+
+.about-section .grid.row2 { grid-template-areas: "image text"; }
+.about-section .grid.row2 img { grid-area: image; }
+.about-section .grid.row2 .text { grid-area: text; }
+
+@media (max-width: 768px) {
+  /* Put images side by side */
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Wrap both grids in a single flex container */
+  .about-section .grid.row1,
+  .about-section .grid.row2 {
+    display: contents; /* allows reordering children */
+  }
+
+  /* Force text to stack first */
+  .about-section .text {
+    order: 1;
+  }
+
+  /* Images in a horizontal row */
+  .about-section img {
+    order: 2;
+    width: 45% !important;
+    max-width: 45% !important;
+    display: inline-block;
+  }
+
+  /* Hide the second row image on mobile */
+  .about-section .grid.row2 img {
+    display: none !important;
+  }
+}
+
+
+
+
+
+/* Ensure menu is sticky and full width on mobile */
+@media (max-width: 768px) {
+  header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+footer {
+  width: 100%;
+}
+
+.footer-container,
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+
+
+/* ============================= */
+/* Services Preview Cards        */
+/* ============================= */
+
+/* Services Preview Cards with border styling */
+
+.services-preview {
+  margin-top: 4rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  text-align: center;
+}
+
+.service-card {
+  border: 2px solid #FFD9B3; /* soft orange border */
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  border-color: #FFC38D; /* slightly warmer on hover */
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #8a007a;
+}
+
+.service-card p {
+  line-height: 1.6;
+  color: #333;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Mobile Responsive Layout */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .service-card img {
+    height: 260px;
+  }
+}
+
+/* ============================= */
+/* Services Preview Cards   END      */
+/* ============================= */
+
+
+.services-preview {
+  max-width: 1000px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* The top middle card spans both columns */
+.center-card {
+  grid-column: 1 / -1;
+  max-width: 400px;
+}
+
+/* Card design */
+.service-card {
+  border: 2px solid #FFD9B3; /* soft orange */
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+  border-color: #FFC38D;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.service-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Mobile: stack all 3 neatly */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .center-card {
+    grid-column: auto;
+  }
+}
+
